@@ -30,10 +30,15 @@ class CNN_ARCHITECTURE(nn.Module):
         self.build_model()
 
     """-------------------------------------------------------------------------------------------------------------
-    @Function: build_model
-    @Args: self
-    @Returns: features
-    @Description: Create a CNN architecture that extracts the features from the input images
+    @Function: 
+        build_model
+    @Args: 
+        self
+    @Returns: 
+        model
+            The model layers for performing the convolution operation
+    @Description: 
+        Create a CNN architecture that extracts the features from the input images
     -------------------------------------------------------------------------------------------------------------"""
     def build_model(self):
 
@@ -63,12 +68,17 @@ class CNN_ARCHITECTURE(nn.Module):
         self.features = nn.Sequential(*layers)
 
     """-------------------------------------------------------------------------------------------------------------
-    @Function: forward
+    @Function: 
+        forward
     @Args: 
         self: object
-        x: inputs
-    @Returns: features
-    @Description: Passes the input to the CNN architecture for feature extraction
+        x: torch.Tensor
+            The input tensor
+    @Returns: 
+        torch.Tensor
+            The output tensor containing the features
+    @Description: 
+        Passes the input to the CNN architecture for feature extraction
     -------------------------------------------------------------------------------------------------------------"""
     def forward(self, x):
         features = self.features(x)
