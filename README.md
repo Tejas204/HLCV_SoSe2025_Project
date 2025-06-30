@@ -2,9 +2,9 @@
 
 ### To-do
 
-1. ViT feature extractor - WIP
+1. ViT feature extractor - Done
 2. Convert the features to image size - Done
 3. Denoising
 4. write training loops
 5. Write loss functions
-6. Make PPT
+6. Make PPT - WIP
