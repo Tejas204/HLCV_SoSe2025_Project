@@ -29,11 +29,37 @@ class VIT_ARCHITECTURE():
 
         self.model.eval()
 
+    """-------------------------------------------------------------------------------------------------------------
+    @Function: 
+        preprocess
+    @Args: 
+        self
+        image_path
+            Path to the image
+    @Returns: 
+        features
+            Extracted final attention layer
+    @Description: 
+        Preprocesses the image in a format required by the feature extractor
+    -------------------------------------------------------------------------------------------------------------"""
     def preprocess(self, image_path):
         image = Image.open(image_path).convert('RGB')
         inputs = self.feature_extractor(images=image, return_tensors="pt")
-        return {k: v.to(self.device) for k, v in inputs.items()}
-
+        return {k: v for k, v in inputs.items()}
+    
+    """-------------------------------------------------------------------------------------------------------------
+    @Function: 
+        extract_features
+    @Args: 
+        self
+        image_path
+            Path to the image
+    @Returns: 
+        features
+            Extracted final attention layer
+    @Description: 
+        Extracts the last layer features and returns
+    -------------------------------------------------------------------------------------------------------------"""
     def extract_features(self, image_path, return_cls=True, return_all=True):
         inputs = self.preprocess(image_path)
         with torch.no_grad():
