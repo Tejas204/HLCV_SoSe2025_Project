@@ -14,5 +14,7 @@ cnn_experiment_1 = dict(
         activation = nn.ReLU,
         norm_layer = False,
         drop_prob = 0.4,
+        model_name = "google/vit-base-patch16-224"
+
     ),
 )
