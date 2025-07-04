@@ -61,16 +61,6 @@ class VIT_ARCHITECTURE(nn.Module):
         Extracts the last layer features and returns
     -------------------------------------------------------------------------------------------------------------"""
     def forward(self, x, return_cls=True, return_all=True):
-        # inputs = self.preprocess(image_path)
-        # with torch.no_grad():
-        #     outputs = self.model(**inputs)
-
-        # features = {}
-        # if return_cls:
-        #     features['cls'] = outputs.last_hidden_state[:, 0]  # [1, 768]
-        # if return_all:
-        #     features['all'] = outputs.last_hidden_state       # [1, 197, 768]
-        # return features
         outputs = self.model(x, output_attentions=True)
         last_attention_layer = outputs.attentions[-1]
         return last_attention_layer

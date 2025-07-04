@@ -23,7 +23,7 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         # Initialize the architecture
         self.cnn = CNN_ARCHITECTURE(cnn_experiment_1['model_args']['input_size'], cnn_experiment_1['model_args']['hidden_layers'], cnn_experiment_1['model_args']['activation'], cnn_experiment_1['model_args']['norm_layer'], cnn_experiment_1['model_args']['drop_prob'])
         self.vit = VIT_ARCHITECTURE(cnn_experiment_1['model_args']['model_name'])
-        self.reconstructor = RECONSTRUCTION_HEAD(512,3)
+        self.reconstructor = RECONSTRUCTION_HEAD(1024,3)
 
     
     """-------------------------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         
 
         vit_attention_resized = F.interpolate(vit_attention_map, size=(H, W), mode='bilinear', align_corners=False)
-        vit_attention_resized = vit_attention_resized.expand(-1, 512, -1, -1)
+        vit_attention_resized = vit_attention_resized.expand(-1, 1024, -1, -1)
 
         combined_features = cnn_features * vit_attention_resized
 
@@ -65,10 +65,11 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         # Visualization
         img = output_image[0].detach().cpu()
         img = (img + 1) / 2  # Denormalize from [-1, 1] to [0, 1]
-        img_np = img.permute(1, 2, 0).numpy()  # (H, W, 3)
+        img_np = img.permute(1, 2, 0).numpy() * 255.0  # (H, W, 3)
 
         # Clamp to [0, 1] in case of overshoot
-        img_np = img_np.clip(0, 1)
+        img_np = img_np.clip(0, 255).astype("uint8")
+        print(img_np)
 
         # Plot image
         plt.figure(figsize=(4, 4))
