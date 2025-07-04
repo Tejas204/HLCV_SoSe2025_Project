@@ -18,7 +18,7 @@ from torchvision.models import ViT_B_16_Weights
 
 from transformers import ViTFeatureExtractor, ViTModel
 
-class VIT_ARCHITECTURE():
+class VIT_ARCHITECTURE(nn.Module):
     def __init__(self, model_name):
         super(VIT_ARCHITECTURE, self).__init__()
 
@@ -27,7 +27,7 @@ class VIT_ARCHITECTURE():
         self.feature_extractor = ViTFeatureExtractor.from_pretrained(model_name)
         self.model = ViTModel.from_pretrained(model_name)
 
-        self.model.eval()
+        # self.model.eval()
 
     """-------------------------------------------------------------------------------------------------------------
     @Function: 
@@ -60,14 +60,17 @@ class VIT_ARCHITECTURE():
     @Description: 
         Extracts the last layer features and returns
     -------------------------------------------------------------------------------------------------------------"""
-    def extract_features(self, image_path, return_cls=True, return_all=True):
-        inputs = self.preprocess(image_path)
-        with torch.no_grad():
-            outputs = self.model(**inputs)
+    def forward(self, x, return_cls=True, return_all=True):
+        # inputs = self.preprocess(image_path)
+        # with torch.no_grad():
+        #     outputs = self.model(**inputs)
 
-        features = {}
-        if return_cls:
-            features['cls'] = outputs.last_hidden_state[:, 0]  # [1, 768]
-        if return_all:
-            features['all'] = outputs.last_hidden_state       # [1, 197, 768]
-        return features
+        # features = {}
+        # if return_cls:
+        #     features['cls'] = outputs.last_hidden_state[:, 0]  # [1, 768]
+        # if return_all:
+        #     features['all'] = outputs.last_hidden_state       # [1, 197, 768]
+        # return features
+        outputs = self.model(x, output_attentions=True)
+        last_attention_layer = outputs.attentions[-1]
+        return last_attention_layer
