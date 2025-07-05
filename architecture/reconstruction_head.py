@@ -6,9 +6,7 @@ class RECONSTRUCTION_HEAD(nn.Module):
         super(RECONSTRUCTION_HEAD, self).__init__()
 
         self.decoder = nn.Sequential(
-            nn.Conv2d(in_channels, 512, kernel_size=3, padding=1),
-            nn.ReLU(),
-            nn.Conv2d(512, 256, kernel_size=3, padding=1),
+            nn.Conv2d(in_channels, 256, kernel_size=3, padding=1),
             nn.ReLU(),
             nn.Conv2d(256, 128, kernel_size=3, padding=1),
             nn.ReLU(),

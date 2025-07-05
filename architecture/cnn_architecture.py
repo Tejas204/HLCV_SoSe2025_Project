@@ -17,7 +17,7 @@ import torchvision.transforms as transforms
 # @CLASS: CNN_ARCHITECTURE
 # -------------------------------------------------------------------------------------------------------------
 class CNN_ARCHITECTURE(nn.Module):
-    def __init__(self, input_size, hidden_layers, activation, norm_layer, drop_prob=0.0):
+    def __init__(self, input_size, hidden_layers, activation, norm_layer, max_pooling, drop_prob=0.0):
         super(CNN_ARCHITECTURE, self).__init__()
 
         # Initialize variables
@@ -26,6 +26,7 @@ class CNN_ARCHITECTURE(nn.Module):
         self.activation = activation
         self.norm_layer = norm_layer
         self.drop_prob = drop_prob
+        self.max_pooling = max_pooling
 
         self.build_model()
 
@@ -46,6 +47,7 @@ class CNN_ARCHITECTURE(nn.Module):
         input_dim = self.input_size
         for i in range(len(self.hidden_layers)):
             # Add the convoluiton layer
+            # Conv2D: inout_dim := num of channels, self.hidden_layers = channels of filter of size 3, with padding 2, stride 1
             layers.append(nn.Conv2d(input_dim, self.hidden_layers[i], 3, stride=1, padding=1))
 
             # Add batch normalization
@@ -53,7 +55,7 @@ class CNN_ARCHITECTURE(nn.Module):
                 layers.append(self.norm_layer(self.hidden_layers[i]))
             
             # Add maxpooling, change this condition
-            if True:
+            if self.max_pooling:
                 layers.append(nn.MaxPool2d(2,2))
             
             # Add activation
