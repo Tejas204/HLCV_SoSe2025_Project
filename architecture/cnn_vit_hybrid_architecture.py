@@ -47,13 +47,12 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
             x = x.unsqueeze(0)
 
         vit_attention = self.vit(x)
+        summed_vit_attention = vit_attention.mean(dim=1)
         # vit_attention_map = vit_attention.mean(dim=1).reshape(1, 1, int(H), int(W))
-        print(f"Attention shape: {vit_attention.shape}")
+        print(f"Attention shape: {summed_vit_attention.shape}")
 
         # Fir visual
-        vit_attention_map = vit_attention[:, 1, :] #remove CLS token
-        print(f"Attention Map after CLS removal: {vit_attention_map.shape}")
-        vit_attention_map = vit_attention_map.reshape(1, 1, 197, 197)
+        vit_attention_map = summed_vit_attention.reshape(1, 1, 197, 197)
         print(f"Attention Map reshaped: {vit_attention_map.shape}")
         
 
@@ -64,7 +63,7 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
 
         combined_features = cnn_features * vit_attention_resized
 
-        output_image = self.reconstructor(vit_attention_resized)
+        output_image = self.reconstructor(combined_features)
 
         # ---------------------------------------------------------------------------------------------------
         # Output Visualization

@@ -58,8 +58,9 @@ class CNN_ARCHITECTURE(nn.Module):
             if self.max_pooling:
                 layers.append(nn.MaxPool2d(2,2))
             
-            # Add activation
-            layers.append(self.activation())
+            # Add activation only at the last layer
+            if i == len(self.hidden_layers) - 1:
+                layers.append(self.activation())
 
             # Add dropout
             if self.drop_prob:
