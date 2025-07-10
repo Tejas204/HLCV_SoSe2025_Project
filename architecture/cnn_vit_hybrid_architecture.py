@@ -113,4 +113,4 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         plt.show()
 
 
-        # return output_image
+        return output_image
