@@ -21,9 +21,9 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         super(CNN_VIT_HYBRID_ARCHITECTURE, self).__init__()
 
         # Initialize the architecture
-        self.cnn = CNN_ARCHITECTURE(cnn_experiment_2['model_args']['input_size'], cnn_experiment_2['model_args']['hidden_layers'], cnn_experiment_2['model_args']['activation'], cnn_experiment_2['model_args']['norm_layer'], cnn_experiment_2['model_args']['drop_prob'], cnn_experiment_2['model_args']['max_pooling'])
-        self.vit = VIT_ARCHITECTURE(cnn_experiment_2['model_args']['model_name'])
-        self.reconstructor = RECONSTRUCTION_HEAD(512,3)
+        self.cnn = CNN_ARCHITECTURE(cnn_experiment_1['model_args']['input_size'], cnn_experiment_1['model_args']['hidden_layers'], cnn_experiment_1['model_args']['activation'], cnn_experiment_1['model_args']['norm_layer'], cnn_experiment_1['model_args']['drop_prob'], cnn_experiment_1['model_args']['max_pooling'])
+        self.vit = VIT_ARCHITECTURE(cnn_experiment_1['model_args']['model_name'])
+        self.reconstructor = RECONSTRUCTION_HEAD(1028,3)
 
     
     """-------------------------------------------------------------------------------------------------------------
@@ -41,7 +41,9 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
     def forward(self, x):
         cnn_features = self.cnn(x)
         print(f"CNN Features: {cnn_features.shape} = {cnn_features.shape[0]} channels, {np.sqrt(cnn_features.shape[1])} height, width")
-        H, W = cnn_features.shape
+        flat_features = cnn_features.view(cnn_features.size(0), -1)
+        H, W = cnn_features.shape[1], cnn_features.shape[2]
+        print(flat_features.shape)
 
         if x.dim() == 3:
             x = x.unsqueeze(0)
@@ -58,7 +60,7 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
 
         vit_attention_resized = F.interpolate(vit_attention_map, size=(H, W), mode='bilinear', align_corners=False)
         print(f"Attention Map after interpolation: {vit_attention_resized.shape}")
-        vit_attention_resized = vit_attention_resized.expand(-1, 512, -1, -1)
+        vit_attention_resized = vit_attention_resized.expand(-1, 1028, -1, -1)
         print(f"Attention Map resized: {vit_attention_resized.shape}")
 
         combined_features = cnn_features * vit_attention_resized

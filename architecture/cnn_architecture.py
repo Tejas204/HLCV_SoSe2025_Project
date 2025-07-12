@@ -85,7 +85,7 @@ class CNN_ARCHITECTURE(nn.Module):
     -------------------------------------------------------------------------------------------------------------"""
     def forward(self, x):
         features = self.features(x)
-        features = features.view(features.size(0), -1)
+        # features = features.view(features.size(0), -1)
         return features
     
 
