@@ -25,6 +25,33 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         self.vit = VIT_ARCHITECTURE(cnn_experiment_1['model_args']['model_name'])
         self.reconstructor = RECONSTRUCTION_HEAD(1028,3)
 
+    """-------------------------------------------------------------------------------------------------------------
+    @Function: 
+        cnn_forward
+    @Args: 
+        self: object
+        x: torch.Tensor
+            The input tensor
+    @Returns: 
+        cnn_features
+    @Description: 
+        Returns CNN features and the height and width
+    -------------------------------------------------------------------------------------------------------------"""
+    def cnn_forward(self, x):
+        cnn_features = self.cnn(x)
+        print(f"CNN Features: {cnn_features.shape} = {cnn_features.shape[0]} channels, {np.sqrt(cnn_features.shape[1])} height, width")
+        flat_features = cnn_features.view(cnn_features.size(0), -1)
+        H, W = cnn_features.shape[1], cnn_features.shape[2]
+        print(flat_features.shape)
+
+        return H, W, cnn_features
+    
+    def vit_forward(self, x):
+        vit_attention = self.vit(x)
+
+        return vit_attention
+
+
     
     """-------------------------------------------------------------------------------------------------------------
     @Function: 
@@ -39,30 +66,30 @@ class CNN_VIT_HYBRID_ARCHITECTURE(nn.Module):
         Creates the CNN architecture, combined the features, decodes them and reconstructs the deblurred image
     -------------------------------------------------------------------------------------------------------------"""
     def forward(self, x):
-        cnn_features = self.cnn(x)
-        print(f"CNN Features: {cnn_features.shape} = {cnn_features.shape[0]} channels, {np.sqrt(cnn_features.shape[1])} height, width")
-        flat_features = cnn_features.view(cnn_features.size(0), -1)
-        H, W = cnn_features.shape[1], cnn_features.shape[2]
-        print(flat_features.shape)
+        
+        # Call to fetch CNN Features
+        H, W, cnn_features = self.cnn_forward(x)
 
         if x.dim() == 3:
             x = x.unsqueeze(0)
 
-        vit_attention = self.vit(x)
+        # Call to fetch ViT features
+        vit_attention = self.vit_forward(x)
         summed_vit_attention = vit_attention.mean(dim=1)
-        # vit_attention_map = vit_attention.mean(dim=1).reshape(1, 1, int(H), int(W))
         print(f"Attention shape: {summed_vit_attention.shape}")
 
-        # Fir visual
+        # For visual
         vit_attention_map = summed_vit_attention.reshape(1, 1, 197, 197)
         print(f"Attention Map reshaped: {vit_attention_map.shape}")
         
 
         vit_attention_resized = F.interpolate(vit_attention_map, size=(H, W), mode='bilinear', align_corners=False)
         print(f"Attention Map after interpolation: {vit_attention_resized.shape}")
+
         vit_attention_resized = vit_attention_resized.expand(-1, 1028, -1, -1)
         print(f"Attention Map resized: {vit_attention_resized.shape}")
 
+        # Combine features
         combined_features = cnn_features * vit_attention_resized
 
         output_image = self.reconstructor(combined_features)
