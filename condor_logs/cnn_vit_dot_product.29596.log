@@ -1,0 +1,64 @@
+000 (29596.000.000) 2025-08-10 18:13:40 Job submitted from host: <10.143.248.61:9618?addrs=10.143.248.61-9618&alias=conduit2.hpc.uni-saarland.de&noUDP&sock=schedd_2845353_11f6>
+...
+040 (29596.000.000) 2025-08-10 18:13:40 Started transferring input files
+	Transferring to host: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dteaching2_2581_4c42_25%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=teaching2_2581_4c42_25>
+...
+040 (29596.000.000) 2025-08-10 18:13:40 Finished transferring input files
+...
+001 (29596.000.000) 2025-08-10 18:13:41 Job executing on host: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dstartd_2542_2dd5%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=startd_2542_2dd5>
+	SlotName: teaching2@thera.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_d2f81563 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_2139963"
+	Cpus = 7
+	Disk = 445099815
+	GPUs = 1
+	GPUs_GPU_d2f81563 = [ Id = "GPU-d2f81563"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "d2f81563-d25a-24f0-a455-af7e3a3f119d"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:05:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 96737
+...
+006 (29596.000.000) 2025-08-10 18:13:50 Image size of job updated: 1298
+	1298  -  MemoryUsage of job (MB)
+	1329868  -  ResidentSetSize of job (KB)
+...
+006 (29596.000.000) 2025-08-10 18:18:51 Image size of job updated: 1572
+	1572  -  MemoryUsage of job (MB)
+	1610392  -  ResidentSetSize of job (KB)
+...
+006 (29596.000.000) 2025-08-10 21:04:13 Image size of job updated: 1573
+	1573  -  MemoryUsage of job (MB)
+	1611076  -  ResidentSetSize of job (KB)
+...
+006 (29596.000.000) 2025-08-10 21:44:16 Image size of job updated: 1573
+	1573  -  MemoryUsage of job (MB)
+	1611088  -  ResidentSetSize of job (KB)
+...
+006 (29596.000.000) 2025-08-11 07:25:19 Image size of job updated: 1573
+	1573  -  MemoryUsage of job (MB)
+	1611092  -  ResidentSetSize of job (KB)
+...
+006 (29596.000.000) 2025-08-11 13:05:54 Image size of job updated: 1573
+	1573  -  MemoryUsage of job (MB)
+	1611108  -  ResidentSetSize of job (KB)
+...
+040 (29596.000.000) 2025-08-11 22:22:32 Started transferring output files
+...
+040 (29596.000.000) 2025-08-11 22:22:32 Finished transferring output files
+...
+005 (29596.000.000) 2025-08-11 22:22:32 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 3 21:49:03, Sys 0 04:21:40  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 3 21:49:03, Sys 0 04:21:40  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	6245  -  Run Bytes Sent By Job
+	295  -  Run Bytes Received By Job
+	6245  -  Total Bytes Sent By Job
+	295  -  Total Bytes Received By Job
+	Partitionable Resources :     Usage  Request Allocated Assigned
+	   Cpus                 :      0.00        1         7 
+	   Disk (KB)            :     28           1 445099815 
+	   GPUs                 :      0.83        1         1 "GPU-d2f81563"
+	   GpusMemory (MB)      :   5235                       
+	   Memory (MB)          :   1573        3072     96737 
+	   TimeExecute (s)      : 101331                       
+	   TimeSlotBusy (s)     : 101332                       
+...

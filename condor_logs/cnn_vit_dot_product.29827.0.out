@@ -1,0 +1,218 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 11.4.3
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+Training started...
+2214
+Epoch 1/100 - Loss: 7.3556
+2214
+Epoch 2/100 - Loss: 6.5661
+2214
+Epoch 3/100 - Loss: 6.1637
+2214
+Epoch 4/100 - Loss: 5.9557
+2214
+Epoch 5/100 - Loss: 5.7975
+2214
+Epoch 6/100 - Loss: 5.6632
+2214
+Epoch 7/100 - Loss: 5.5772
+2214
+Epoch 8/100 - Loss: 5.4799
+2214
+Epoch 9/100 - Loss: 5.4003
+2214
+Epoch 10/100 - Loss: 5.3296
+2214
+Epoch 11/100 - Loss: 5.2667
+2214
+Epoch 12/100 - Loss: 5.2100
+2214
+Epoch 13/100 - Loss: 5.1537
+2214
+Epoch 14/100 - Loss: 5.1035
+2214
+Epoch 15/100 - Loss: 5.0522
+2214
+Epoch 16/100 - Loss: 5.0117
+2214
+Epoch 17/100 - Loss: 4.9615
+2214
+Epoch 18/100 - Loss: 4.9231
+2214
+Epoch 19/100 - Loss: 4.8755
+2214
+Epoch 20/100 - Loss: 4.8390
+2214
+Epoch 21/100 - Loss: 4.8023
+2214
+Epoch 22/100 - Loss: 4.7692
+2214
+Epoch 23/100 - Loss: 4.7354
+2214
+Epoch 24/100 - Loss: 4.7086
+2214
+Epoch 25/100 - Loss: 4.6700
+2214
+Epoch 26/100 - Loss: 4.6372
+2214
+Epoch 27/100 - Loss: 4.6208
+2214
+Epoch 28/100 - Loss: 4.5844
+2214
+Epoch 29/100 - Loss: 4.5648
+2214
+Epoch 30/100 - Loss: 4.5320
+2214
+Epoch 31/100 - Loss: 4.5080
+2214
+Epoch 32/100 - Loss: 4.4798
+2214
+Epoch 33/100 - Loss: 4.4631
+2214
+Epoch 34/100 - Loss: 4.4453
+2214
+Epoch 35/100 - Loss: 4.4282
+2214
+Epoch 36/100 - Loss: 4.3909
+2214
+Epoch 37/100 - Loss: 4.3836
+2214
+Epoch 38/100 - Loss: 4.3536
+2214
+Epoch 39/100 - Loss: 4.3385
+2214
+Epoch 40/100 - Loss: 4.3159
+2214
+Epoch 41/100 - Loss: 4.3123
+2214
+Epoch 42/100 - Loss: 4.2791
+2214
+Epoch 43/100 - Loss: 4.2762
+2214
+Epoch 44/100 - Loss: 4.2496
+2214
+Epoch 45/100 - Loss: 4.2356
+2214
+Epoch 46/100 - Loss: 4.2075
+2214
+Epoch 47/100 - Loss: 4.1987
+2214
+Epoch 48/100 - Loss: 4.1859
+2214
+Epoch 49/100 - Loss: 4.1747
+2214
+Epoch 50/100 - Loss: 4.1559
+2214
+Epoch 51/100 - Loss: 4.1458
+2214
+Epoch 52/100 - Loss: 4.1278
+2214
+Epoch 53/100 - Loss: 4.1119
+2214
+Epoch 54/100 - Loss: 4.1043
+2214
+Epoch 55/100 - Loss: 4.0840
+2214
+Epoch 56/100 - Loss: 4.0785
+2214
+Epoch 57/100 - Loss: 4.0618
+2214
+Epoch 58/100 - Loss: 4.0559
+2214
+Epoch 59/100 - Loss: 4.0403
+2214
+Epoch 60/100 - Loss: 4.0316
+2214
+Epoch 61/100 - Loss: 4.0325
+2214
+Epoch 62/100 - Loss: 4.0030
+2214
+Epoch 63/100 - Loss: 3.9953
+2214
+Epoch 64/100 - Loss: 3.9861
+2214
+Epoch 65/100 - Loss: 3.9773
+2214
+Epoch 66/100 - Loss: 3.9668
+2214
+Epoch 67/100 - Loss: 3.9555
+2214
+Epoch 68/100 - Loss: 3.9507
+2214
+Epoch 69/100 - Loss: 3.9285
+2214
+Epoch 70/100 - Loss: 3.9310
+2214
+Epoch 71/100 - Loss: 3.9116
+2214
+Epoch 72/100 - Loss: 3.9132
+2214
+Epoch 73/100 - Loss: 3.8937
+2214
+Epoch 74/100 - Loss: 3.8881
+2214
+Epoch 75/100 - Loss: 3.8779
+2214
+Epoch 76/100 - Loss: 3.8721
+2214
+Epoch 77/100 - Loss: 3.8660
+2214
+Epoch 78/100 - Loss: 3.8573
+2214
+Epoch 79/100 - Loss: 3.8481
+2214
+Epoch 80/100 - Loss: 3.8412
+2214
+Epoch 81/100 - Loss: 3.8330
+2214
+Epoch 82/100 - Loss: 3.8203
+2214
+Epoch 83/100 - Loss: 3.8128
+2214
+Epoch 84/100 - Loss: 3.8092
+2214
+Epoch 85/100 - Loss: 3.8010
+2214
+Epoch 86/100 - Loss: 3.7924
+2214
+Epoch 87/100 - Loss: 3.7835
+2214
+Epoch 88/100 - Loss: 3.7840
+2214
+Epoch 89/100 - Loss: 3.7715
+2214
+Epoch 90/100 - Loss: 3.7575
+2214
+Epoch 91/100 - Loss: 3.7589
+2214
+Epoch 92/100 - Loss: 3.7511
+2214
+Epoch 93/100 - Loss: 3.7400
+2214
+Epoch 94/100 - Loss: 3.7338
+2214
+Epoch 95/100 - Loss: 3.7322
+2214
+Epoch 96/100 - Loss: 3.7377
+2214
+Epoch 97/100 - Loss: 3.7100
+2214
+Epoch 98/100 - Loss: 3.7104
+2214
+Epoch 99/100 - Loss: 3.7072
+2214
+Epoch 100/100 - Loss: 3.7013
+Loading best model for evaluation...
+Best model file not found. Skipping evaluation and visualization.

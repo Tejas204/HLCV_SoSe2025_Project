@@ -1,0 +1,52 @@
+000 (29655.000.000) 2025-08-11 22:43:09 Job submitted from host: <10.143.248.61:9618?addrs=10.143.248.61-9618&alias=conduit2.hpc.uni-saarland.de&noUDP&sock=schedd_2845353_11f6>
+...
+040 (29655.000.000) 2025-08-11 22:43:12 Started transferring input files
+	Transferring to host: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dteaching2_2581_4c42_28%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=teaching2_2581_4c42_28>
+...
+040 (29655.000.000) 2025-08-11 22:43:12 Finished transferring input files
+...
+001 (29655.000.000) 2025-08-11 22:43:13 Job executing on host: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dstartd_2542_2dd5%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=startd_2542_2dd5>
+	SlotName: teaching2@thera.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_d2f81563 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_2990373"
+	Cpus = 7
+	Disk = 445099815
+	GPUs = 1
+	GPUs_GPU_d2f81563 = [ Id = "GPU-d2f81563"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "d2f81563-d25a-24f0-a455-af7e3a3f119d"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:05:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 96737
+...
+006 (29655.000.000) 2025-08-11 22:43:21 Image size of job updated: 197
+	197  -  MemoryUsage of job (MB)
+	201752  -  ResidentSetSize of job (KB)
+...
+006 (29655.000.000) 2025-08-11 22:48:21 Image size of job updated: 1368
+	1368  -  MemoryUsage of job (MB)
+	1400964  -  ResidentSetSize of job (KB)
+...
+006 (29655.000.000) 2025-08-11 22:50:30 Image size of job updated: 1493
+	1493  -  MemoryUsage of job (MB)
+	1528892  -  ResidentSetSize of job (KB)
+...
+040 (29655.000.000) 2025-08-11 22:50:30 Started transferring output files
+...
+040 (29655.000.000) 2025-08-11 22:50:30 Finished transferring output files
+...
+005 (29655.000.000) 2025-08-11 22:50:31 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:25:09, Sys 0 00:01:26  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:25:09, Sys 0 00:01:26  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	1583  -  Run Bytes Sent By Job
+	295  -  Run Bytes Received By Job
+	1583  -  Total Bytes Sent By Job
+	295  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     0.00        1         7 
+	   Disk (KB)            :    23           1 445099815 
+	   GPUs                 :     0.41        1         1 "GPU-d2f81563"
+	   GpusMemory (MB)      :  1835                       
+	   Memory (MB)          :  1493        3072     96737 
+	   TimeExecute (s)      :   437                       
+	   TimeSlotBusy (s)     :   439                       
+...

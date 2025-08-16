@@ -1,0 +1,74 @@
+000 (29702.000.000) 2025-08-12 10:43:40 Job submitted from host: <10.143.248.61:9618?addrs=10.143.248.61-9618&alias=conduit2.hpc.uni-saarland.de&noUDP&sock=schedd_2845353_11f6>
+...
+040 (29702.000.000) 2025-08-12 10:43:53 Started transferring input files
+	Transferring to host: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dteaching2_2581_4c42_37%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=teaching2_2581_4c42_37>
+...
+040 (29702.000.000) 2025-08-12 10:43:53 Finished transferring input files
+...
+001 (29702.000.000) 2025-08-12 10:43:54 Job executing on host: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dstartd_2542_2dd5%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=startd_2542_2dd5>
+	SlotName: teaching2@thera.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_d2f81563 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_3347796"
+	Cpus = 7
+	Disk = 445099815
+	GPUs = 1
+	GPUs_GPU_d2f81563 = [ Id = "GPU-d2f81563"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "d2f81563-d25a-24f0-a455-af7e3a3f119d"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:05:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 96737
+...
+006 (29702.000.000) 2025-08-12 10:44:03 Image size of job updated: 183
+	183  -  MemoryUsage of job (MB)
+	187540  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 10:49:03 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1608784  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 10:59:05 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1609192  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 11:29:11 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1609200  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 11:39:13 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1609208  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 11:44:13 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1609212  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 11:49:13 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1609216  -  ResidentSetSize of job (KB)
+...
+006 (29702.000.000) 2025-08-12 14:34:26 Image size of job updated: 1571
+	1571  -  MemoryUsage of job (MB)
+	1609224  -  ResidentSetSize of job (KB)
+...
+022 (29702.000.000) 2025-08-12 14:46:40 Job disconnected, attempting to reconnect
+    Local schedd and job shadow died, schedd now running again
+    Trying to reconnect to teaching2@thera.hpc.uni-saarland.de <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dstartd_2542_2dd5%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=startd_2542_2dd5>
+...
+023 (29702.000.000) 2025-08-12 14:46:40 Job reconnected to teaching2@thera.hpc.uni-saarland.de
+    startd address: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dstartd_2542_2dd5%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=startd_2542_2dd5>
+    starter address: <10.143.248.15:9618?PrivAddr=%3c10.143.250.15:9618%3fsock%3dteaching2_2581_4c42_37%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.15-9618&alias=thera.hpc.uni-saarland.de&noUDP&sock=teaching2_2581_4c42_37>
+...
+005 (29702.000.000) 2025-08-12 19:12:47 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 2 00:12:37, Sys 0 02:44:10  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 2 22:29:38, Sys 0 03:59:53  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	6294  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	6294  -  Total Bytes Sent By Job
+	295  -  Total Bytes Received By Job
+	Partitionable Resources :         Usage  Request Allocated 
+	   Cpus                 :          0.00        1         7 
+	   Disk (KB)            :         28          28 445099815 
+	   Memory (MB)          :       1571        3072     96737 
+	   TimeExecute (s)      : 1755018767                       
+	   TimeSlotBusy (s)     : 1755018767                       
+...

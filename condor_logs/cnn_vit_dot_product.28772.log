@@ -1,0 +1,44 @@
+000 (28772.000.000) 2025-07-20 01:24:45 Job submitted from host: <10.143.248.61:9618?addrs=10.143.248.61-9618&alias=conduit2.hpc.uni-saarland.de&noUDP&sock=schedd_1068_233c>
+...
+040 (28772.000.000) 2025-07-20 01:24:54 Started transferring input files
+	Transferring to host: <10.143.248.24:9618?PrivAddr=%3c10.143.250.24:9618%3fsock%3dteaching1_519706_a447_289%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.24-9618&alias=tenos.hpc.uni-saarland.de&noUDP&sock=teaching1_519706_a447_289>
+...
+040 (28772.000.000) 2025-07-20 01:24:54 Finished transferring input files
+...
+001 (28772.000.000) 2025-07-20 01:24:55 Job executing on host: <10.143.248.24:9618?PrivAddr=%3c10.143.250.24:9618%3fsock%3dstartd_519660_1d71%3e&PrivNet=cs-hpc-storage&addrs=10.143.248.24-9618&alias=tenos.hpc.uni-saarland.de&noUDP&sock=startd_519660_1d71>
+	SlotName: teaching1@tenos.hpc.uni-saarland.de
+	AvailableGPUs = { GPUs_GPU_c97c1695 }
+	CondorScratchDir = "/raid/condor/lib/condor/execute/dir_710582"
+	Cpus = 7
+	Disk = 452382198
+	GPUs = 1
+	GPUs_GPU_c97c1695 = [ Id = "GPU-c97c1695"; Capability = 6.0; DeviceName = "Tesla P100-SXM2-16GB"; DeviceUuid = "c97c1695-36f7-e7dd-85d7-83691e4a60a5"; ECCEnabled = true; NvidiaDriver = "550.163.01"; DriverVersion = 12.4; DevicePciBusId = "0000:04:00.0"; GlobalMemoryMb = 16269; MaxSupportedVersion = 12040 ]
+	Memory = 96737
+...
+006 (28772.000.000) 2025-07-20 01:25:04 Image size of job updated: 681
+	681  -  MemoryUsage of job (MB)
+	698152  -  ResidentSetSize of job (KB)
+...
+040 (28772.000.000) 2025-07-20 01:25:09 Started transferring output files
+...
+040 (28772.000.000) 2025-07-20 01:25:09 Finished transferring output files
+...
+005 (28772.000.000) 2025-07-20 01:25:09 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:05, Sys 0 00:00:01  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:05, Sys 0 00:00:01  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	2678  -  Run Bytes Sent By Job
+	295  -  Run Bytes Received By Job
+	2678  -  Total Bytes Sent By Job
+	295  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :        0        1         7 
+	   Disk (KB)            :       24        1 452382198 
+	   GPUs                 :        0        1         1 "GPU-c97c1695"
+	   GpusMemory (MB)      :      121                    
+	   Memory (MB)          :      681     3072     96737 
+	   TimeExecute (s)      :       14                    
+	   TimeSlotBusy (s)     :       15                    
+...
